@@ -8,3 +8,4 @@ p
 pymupdf
 numpy
 pandas
+gunicorn
