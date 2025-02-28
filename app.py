@@ -5,12 +5,10 @@ import torch
 
 app = Flask(__name__)
 
-
-# ✅ Load LOCAL model & tokenizer (not Hugging Face)
-MODEL_PATH = "./medical_summary_model"
+# ✅ Load LOCAL model & tokenizer
+MODEL_PATH = "medical_summary_model"  # Ensure this is uploaded to GitHub
 tokenizer = T5Tokenizer.from_pretrained(MODEL_PATH)
 model = T5ForConditionalGeneration.from_pretrained(MODEL_PATH)
-
 
 def summarize_text(text):
     """Generates a summary for the input medical text."""
@@ -21,7 +19,7 @@ def summarize_text(text):
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return "Flask app is running on Render!"
 
 @app.route("/summarize", methods=["POST"])
 def summarize():
@@ -33,5 +31,5 @@ def summarize():
     return jsonify({"summary": summary})
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))  # Default Render PORT is 10000
+    port = int(os.environ.get("PORT", 10000))  # ✅ Fix: Use Render's assigned PORT variable
     app.run(host="0.0.0.0", port=port)
