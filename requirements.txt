@@ -11,3 +11,4 @@ werkzeug==2.2.3
 flask==2.0.3
 click==7.1.2
 gunicorn
+huggingface_hub
