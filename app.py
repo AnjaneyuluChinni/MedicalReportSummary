@@ -5,10 +5,12 @@ import torch
 
 app = Flask(__name__)
 
-# Load model and tokenizer
-MODEL_PATH = "medical_summary_model"
+
+# ✅ Load LOCAL model & tokenizer (not Hugging Face)
+MODEL_PATH = "./medical_summary_model"
 tokenizer = T5Tokenizer.from_pretrained(MODEL_PATH)
 model = T5ForConditionalGeneration.from_pretrained(MODEL_PATH)
+
 
 def summarize_text(text):
     """Generates a summary for the input medical text."""
