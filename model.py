@@ -98,7 +98,7 @@ trainer.train()
 
 
 # ✅ Save Model and Tokenizer LOCALLY
-model_save_path = "./medical_summary_model"  # Ensure it's in your project folder
+model_save_path = "medical_summary_model" 
 model.save_pretrained(model_save_path)
 tokenizer.save_pretrained(model_save_path)
 print(f"✅ Model and tokenizer saved to {model_save_path}")
