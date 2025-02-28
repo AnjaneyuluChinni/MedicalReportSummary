@@ -3,12 +3,11 @@ torch
 torchvision
 torchaudio
 sentencepiece
-p
 pymupdf
 numpy
 pandas
-werkzeug==2.2.3
-flask==2.0.3
-click==7.1.2
+werkzeug==2.3.7  
+flask==2.3.2  
+click
 gunicorn
 huggingface_hub
